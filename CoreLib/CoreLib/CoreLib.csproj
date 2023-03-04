@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <PackageId>PvMS.lab1.CoreLib</PackageId>
+    <Title>PvMS.lab1.CoreLib</Title>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+</Project>
