@@ -10,6 +10,7 @@ namespace CoreLib
     {
         public string SortWords(string input)
         {
+            // Сортування слів за допомогою Linq
             return string.Join(" ", input.Split(' ').OrderByDescending(x => x));
         }
 

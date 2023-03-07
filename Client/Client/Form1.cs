@@ -1,14 +1,7 @@
 ﻿using CoreLib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Client
@@ -23,9 +16,10 @@ namespace Client
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Створюю Http канал, та реєструю його в канальному сервісі, для того щоб його використовувати
             HttpChannel ch = new HttpChannel();
             ChannelServices.RegisterChannel(ch, false);
-
+            // Створюю проксі об'єкт віддаленого сервісу
             _remote = (TextSorter)Activator.GetObject(
                         typeof(TextSorter),
                         "http://localhost:5000/TextSorter.soap");
@@ -35,6 +29,7 @@ namespace Client
         {
             var str = Input.Text;
 
+            // Викликаю віддалену функцію сортування слів
             var res = _remote.SortWords(str);
 
             Result.Text = res;

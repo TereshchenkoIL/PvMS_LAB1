@@ -28,7 +28,7 @@ namespace MaxConnectionTest
                 remote.SortWords("a1 b2 d3 c4");
                 Console.WriteLine("iteration");
             };
-
+            // Запускаю 500 потоків, з яких викликаю функцію віддаленого сервісу
             foreach (var i in Enumerable.Range(0, 500))
                 new Thread(action) { IsBackground = true }.Start();
 
